@@ -28,7 +28,7 @@ test data:
 
 ### Example
 ```
-python main.py --class_name all --data_path [/data/path/] --cnn wrn50_2 --wild False
+python trainer_cfa.py --class_name all --data_path [/data/path/] --cnn wrn50_2 --wild False
 ```
 
 ## Reference
