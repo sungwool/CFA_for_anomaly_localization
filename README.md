@@ -1,4 +1,4 @@
-# Coupled-hypersphere-based Feature Adapatation for Target-Oriented Anomaly Localization
+# CFA for Target-Oriented Anomaly Localization
 
 ## Getting Started
 
