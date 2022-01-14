@@ -33,6 +33,9 @@ python trainer_cfa.py --class_name all --data_path [/data/path/] --cnn wrn50_2 -
 
 ## Reference
 [1] https://github.com/byungjae89/SPADE-pytorch
+
 [2] https://github.com/xiahaifeng1995/PaDiM-Anomaly-Detection-Localization-master
+
 [3] https://github.com/pytorch/vision/tree/main/torchvision/models
+
 [4] https://github.com/lukasruff/Deep-SVDD-PyTorch
