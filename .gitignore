@@ -1,6 +1,4 @@
-mvtec_result
 __pycache__
-weights
 *.pyc
-test
-cluster
+.gitignore
+mvtec_results

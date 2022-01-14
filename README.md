@@ -1,4 +1,4 @@
-# Coupled-hypersphere-based Feature Adapatition for Target-Oriented Anomaly Localization
+# Coupled-hypersphere-based Feature Adapatation for Target-Oriented Anomaly Localization
 
 ## Getting Started
 
@@ -18,7 +18,6 @@ train data:
     [...]
 
 test data:
-
     dataset_path/class_name/test/good/any_filename.png
     [...]
 
