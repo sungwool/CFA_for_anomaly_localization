@@ -22,6 +22,7 @@ test data:
     [...]
 
     dataset_path/class_name/test/defect_type/any_filename.png
+    [...]
 ``` 
 
 ## How to train
