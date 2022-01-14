@@ -28,7 +28,7 @@ test data:
 
 ### Example
 ```
-python trainer_cfa.py --class_name all --data_path [/data/path/] --cnn wrn50_2 --wild False
+python trainer_cfa.py --class_name all --data_path [/path/to/dataset/] --cnn wrn50_2 --Rd False --size 224 --gamma_c 1 --gamma_d 1
 ```
 
 ## Reference
