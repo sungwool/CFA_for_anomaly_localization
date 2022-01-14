@@ -8,7 +8,7 @@ from utils.coordconv import CoordConv2d
 import torch.nn.functional as F
 
 class DSVDD(nn.Module):
-    def __init__(self, model, data_loader, cnn, device):
+    def __init__(self, model, data_loader, cnn, gamma_c, gamma_d, device):
         super(DSVDD, self).__init__()
         self.device = device
         
@@ -16,8 +16,8 @@ class DSVDD(nn.Module):
         self.nu = 1e-3
         self.scale = None
 
-        self.gamma_d = 1
-        self.gamma_c = 1
+        self.gamma_c = gamma_c
+        self.gamma_d = gamma_d
         self.alpha = 1e-1
         self.K = 3
         self.J = 3

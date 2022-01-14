@@ -315,7 +315,7 @@ url_map = {'efficientnet-b5': 'https://github.com/lukemelas/EfficientNet-PyTorch
 url_map_advprop = {'efficientnet-b5': 'https://github.com/lukemelas/EfficientNet-PyTorch/releases/download/1.0/adv-efficientnet-b5-86493f6b.pth'}
 
 
-def load_pretrained_weights(model, model_name, weights_path=None, load_fc=True, advprop=False, verbose=True):
+def load_pretrained_weights(model, model_name, weights_path=None, load_fc=False, advprop=False, verbose=True):
     if isinstance(weights_path, str):
         state_dict = torch.load(weights_path)
     else:
@@ -326,12 +326,7 @@ def load_pretrained_weights(model, model_name, weights_path=None, load_fc=True, 
         ret = model.load_state_dict(state_dict, strict=False)
         assert not ret.missing_keys, 'Missing keys when loading pretrained weights: {}'.format(ret.missing_keys)
     else:
-        state_dict.pop('_fc.weight')
-        state_dict.pop('_fc.bias')
         ret = model.load_state_dict(state_dict, strict=False)
-        assert set(ret.missing_keys) == set(
-            ['_fc.weight', '_fc.bias']), 'Missing keys when loading pretrained weights: {}'.format(ret.missing_keys)
-    assert not ret.unexpected_keys, 'Missing keys when loading pretrained weights: {}'.format(ret.unexpected_keys)
 
     if verbose:
         print('Loaded pretrained weights for {}'.format(model_name))

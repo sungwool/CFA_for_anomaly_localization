@@ -24,10 +24,14 @@ device = torch.device('cuda' if use_cuda else 'cpu')
 
 def parse_args():
     parser = argparse.ArgumentParser('CFA configuration')
-    parser.add_argument('--data_path', type=str, default='~/data/mvtec/')
+    parser.add_argument('--data_path', type=str)
     parser.add_argument('--save_path', type=str, default='./mvtec_result')
     parser.add_argument('--wild', type=bool, default=False)
     parser.add_argument('--cnn', type=str, choices=['res18', 'wrn50_2', 'effnet-b5', 'vgg19'], default='wrn50_2')
+    parser.add_argument('--size', type=int, choices=[224, 256], default=224)
+    parser.add_argument('--gamma_c', type=int, default=1)
+    parser.add_argument('--gamma_d', type=int, default=1)
+    
     parser.add_argument('--class_name', type=str, default='all')
     
     return parser.parse_args()
@@ -61,14 +65,14 @@ def run():
         train_dataset    = MVTecDataset(dataset_path  = args.data_path, 
                                         class_name    =     class_name, 
                                         resize        =            256,
-                                        cropsize      =            256,
+                                        cropsize      =      args.size,
                                         is_train      =           True,
                                         wild_ver      =       args.wild)
         
         test_dataset     = MVTecDataset(dataset_path  = args.data_path, 
                                         class_name    =     class_name, 
                                         resize        =            256,
-                                        cropsize      =            256,
+                                        cropsize      =      args.size,
                                         is_train      =          False,
                                         wild_ver      =      args.wild)
 
@@ -95,7 +99,7 @@ def run():
         model = model.to(device)
         model.eval()
 
-        loss_fn = DSVDD(model, train_loader, args.cnn, device)
+        loss_fn = DSVDD(model, train_loader, args.cnn, args.gamma_c, args.gamma_d, device)
         loss_fn = loss_fn.to(device)
         
         epochs = 30
