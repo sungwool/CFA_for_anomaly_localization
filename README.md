@@ -8,7 +8,7 @@ Install packages with:
 $ pip install -r requirements.txt
 ```
 
-## Data
+## Dataset 
 
 Prepare industrial image as:
 
