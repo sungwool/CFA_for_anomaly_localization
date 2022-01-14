@@ -102,7 +102,7 @@ def run():
         loss_fn = DSVDD(model, train_loader, args.cnn, args.gamma_c, args.gamma_d, device)
         loss_fn = loss_fn.to(device)
         
-        epochs = 30
+        epochs = 1
         params = [{'params' : loss_fn.parameters()},]
         optimizer     = optim.AdamW(params        = params, 
                                     lr            = 1e-3,
@@ -174,7 +174,7 @@ def run():
         total_pixel_pro_auc.append(best_pxl_pro)
 
         fig_pixel_rocauc.plot(fpr, tpr, label='%s ROCAUC: %.3f' % (class_name, per_pixel_rocauc))
-        save_dir = args.save_path + '/' + f'pictures_{args.arch}'
+        save_dir = args.save_path + '/' + f'pictures_{args.cnn}'
         os.makedirs(save_dir, exist_ok=True)
         plot_fig(test_imgs, scores, gt_mask_list, threshold, save_dir, class_name)
 
