@@ -1,5 +1,7 @@
 # CFA for Target-Oriented Anomaly Localization
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/cfa-coupled-hypersphere-based-feature/anomaly-detection-on-mvtec-ad)](https://paperswithcode.com/sota/anomaly-detection-on-mvtec-ad?p=cfa-coupled-hypersphere-based-feature)
+
 ## Getting Started
 
 Install packages with:
