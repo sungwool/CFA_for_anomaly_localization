@@ -102,7 +102,7 @@ def run():
         loss_fn = DSVDD(model, train_loader, args.cnn, args.gamma_c, args.gamma_d, device)
         loss_fn = loss_fn.to(device)
         
-        epochs = 1
+        epochs = 30
         params = [{'params' : loss_fn.parameters()},]
         optimizer     = optim.AdamW(params        = params, 
                                     lr            = 1e-3,
