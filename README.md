@@ -69,3 +69,15 @@ C : crop
 [3] https://github.com/pytorch/vision/tree/main/torchvision/models
 
 [4] https://github.com/lukasruff/Deep-SVDD-PyTorch
+
+
+## Citation
+
+```
+@article{lee2022cfa,
+  title={CFA: Coupled-hypersphere-based Feature Adaptation for Target-Oriented Anomaly Localization},
+  author={Lee, Sungwook and Lee, Seunghyun and Song, Byung Cheol},
+  journal={arXiv preprint arXiv:2206.04325},
+  year={2022}
+}
+```
